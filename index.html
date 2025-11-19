@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Interactive Graph Demo</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <h1>Interactive Graph</h1>
+
+  <!-- Slider -->
+  <label>
+    Filter value:
+    <input type="range" id="filterSlider" min="0" max="100" value="50">
+  </label>
+  <span id="sliderValue">50</span>
+
+  <!-- Graph -->
+  <canvas id="myChart"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
