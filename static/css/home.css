@@ -1,0 +1,99 @@
+/* --- Global & Body Styles --- */
+
+:root {
+  /* Define a color palette for the aquatic theme */
+  --color-dark-water: #001f3f; /* Deep Navy/Ocean Blue */
+  --color-mid-water: #0073e6;  /* Brighter, Vibrant Blue */
+  --color-seafoam: #66ccff;    /* Light, almost glowing blue */
+  --color-sand: #f4f4f4;       /* Off-white for text contrast */
+  --color-biolum: #00ffcc;     /* Glowing Teal/Cyan for accents */
+}
+
+body {
+  /* Set a deep ocean background */
+  background-color: var(--color-dark-water);
+  color: var(--color-sand);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 50px 20px 20px 20px;
+  /* Add a subtle texture/gradient for a watery feel */
+  background-image: radial-gradient(circle at 50% 10%, var(--color-mid-water) 1%, var(--color-dark-water) 50%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* --- Header Styles --- */
+
+h1 {
+  font-size: 2.5em;
+  font-weight: 300;
+  margin-bottom: 0.5em;
+  text-align: center;
+  text-shadow: 0 0 10px var(--color-seafoam);
+}
+
+/* --- Navigation Button Container --- */
+
+.nav-button button {
+  /* Basic structure */
+  padding: 10px;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 1.3em;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: all 0.3s ease-in-out;
+  outline: none;
+  
+  /* Aquatic styling */
+  background-color: var(--color-mid-water);
+  color: var(--color-sand);
+  border: 2px solid var(--color-biolum); /* Bioluminescent border */
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.4); /* Soft inner glow */
+}
+
+/* Bioluminescent effect on hover */
+.nav-button button:hover {
+  background-color: var(--color-mid-water); /* Keep background, but intensify effects */
+  color: var(--color-biolum); /* Text glows */
+  /* Stronger box shadow for a 'rising to the surface' or 'powering up' effect */
+  box-shadow: 0 0 25px var(--color-biolum), 0 0 5px var(--color-sand) inset;
+  transform: scale(1.05); /* Subtle lift */
+}
+
+/* Pressing effect */
+.nav-button button:active {
+  transform: scale(1.02);
+  background-color: #005bb5; /* Slightly darker mid-water */
+  box-shadow: 0 0 10px var(--color-biolum);
+}
+
+/* Styling for specific buttons */
+#graphBtn {
+  /* Give the Graph button a primary, energetic color */
+  border-color: var(--color-biolum);
+  background-image: url(../images/graph_icon.png);
+  background-size: cover;
+}
+
+#mapBtn {
+  /* Give the Map button a slightly different, complementary aquatic color */
+  border-color: var(--color-seafoam);
+  background-image: url(../images/map_icon.png);
+  background-size: cover;
+}
+
+#mapBtn:hover {
+  box-shadow: 0 0 25px var(--color-seafoam), 0 0 5px var(--color-sand) inset;
+  color: var(--color-seafoam);
+}

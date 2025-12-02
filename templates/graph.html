@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>FAO Production Graph</title>
+  <link rel="stylesheet" href="/static/css/graph.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.js"></script>
+</head>
+<body>
+  <h1>FAO Capture Production</h1>
+
+  <div class="controls">
+    <div class="control-group year-range-group">
+      <label>Year Range</label>
+      <div id="year-range-slider"></div>
+    </div>
+
+    <div class="control-group filter-group">
+      <label>FAO Area</label>
+      <select id="faoAreaFilter">
+        <option value="">All Areas</option>
+      </select>
+    </div>
+
+    <div class="control-group filter-group">
+      <label>ISSCAAP Group</label>
+      <select id="isscaapFilter">
+        <option value="">All ISSCAAP Groups</option>
+      </select>
+    </div>
+
+    <div class="control-group filter-group">
+      <label>Production Type</label>
+      <select id="productionTypeFilter">
+        <option value="">All Types</option>
+        <option value="Capture">Capture</option>
+        <option value="Aquaculture">Aquaculture</option>
+      </select>
+    </div>
+
+    <div class="control-group filter-group">
+      <label>Unit</label>
+      <select id="unitFilter">
+        <option value="Tonnes - live weight">Weight</option>
+        <option value="Number">Number</option>
+      </select>
+    </div>
+
+    <button id="applyBtn">Apply</button>
+  </div>
+
+  <div class="chart-container">
+    <canvas id="myChart"></canvas>
+  </div>
+
+  <script src="/static/js/graph.js"></script>
+</body>
+</html>

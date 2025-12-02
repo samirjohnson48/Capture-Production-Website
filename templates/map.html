@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>FAO Major Fishing Areas Map</title>
+    <link rel="stylesheet" href="/static/css/map.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+
+<body>
+    <h1>FAO Major Fishing Areas</h1>
+
+    <div class="settings">
+        <div id="projection-dropdown" class="dropdown">
+            <div id="projectionBtn" class="dropdown-button" data-value="">Projection</div>
+
+            <div id="projectionMenu" class="dropdown-content">
+                <div class="dropdown-item" data-value="mercator">Mercator</div>
+                <div class="dropdown-item" data-value="orthographic">Orthographic</div>
+                <div class="dropdown-item" data-value="natural">Natural</div>
+            </div>
+        </div>
+
+        <input type="range" id="yearSlider" min="1950" max="2023" value="2023" step="1">
+    </div>
+
+    <div id="map-container">
+        <svg id="map"></svg>
+        <div id="mapLoader" class="hidden">
+            <div class="spinner"></div>
+        </div>
+        <div id="sidebar" class="sidebar">
+            <button id="closeSidebar" class="close-btn">×</button>
+            <div id="sidebarContent">
+                <h2 id="areaTitle">Select an Area</h2>
+                <div id="areaStats">
+                    <p>Click on an area to see statistics</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/map.js"></script>
+</body>

@@ -1,0 +1,209 @@
+:root {
+    --background-color: #021019;
+    --foreground-color: #00e5ff;
+    --button-bg-color: #2a105b;
+    --stroke-color: #1a3b5c;
+    --selected-color: #0099ff;
+}
+
+/* World Map Page Styles */
+body {
+    margin: 0;
+    font-family: DejaVu Sans Mono, monospace;
+    font-size: 14px;
+    background-color: #021019;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: var(--foreground-color);
+    text-shadow: 2px 2px 5px var(--foreground-color);
+}
+
+.settings {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.dropdown-button {
+    background-color: var(--button-bg-color);
+    color: var(--foreground-color);
+    border: 1px solid var(--foreground-color);
+    text-align: center;
+    padding: 5px 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    position: relative;
+}
+
+.dropdown-button:hover {
+    background-color: var(--selected-color);
+    color: white;
+    text-shadow: 1px 1px 2px var(--foreground-color);
+}
+
+.dropdown-content {
+    border: 1px solid var(--foreground-color);
+    border-radius: 4px;
+    background-color: var(--button-bg-color);
+    position: absolute;
+    z-index: 1000;
+}
+
+.dropdown-content.hidden {
+    display: none;
+}
+
+.dropdown-item {
+    padding: 5px 2px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.dropdown-item:hover {
+    background-color: var(--selected-color);
+    color: white;
+    text-shadow: 1px 1px 2px var(--foreground-color)
+}
+
+.dropdown-item.selected {
+    background-color: var(--selected-color);
+    color: var(--foreground-color);
+}
+
+#map-container {
+    width: 100%;
+    height: calc(100vh - 100px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.continent {
+    fill: #092236;
+    stroke: #1a3b5c;
+    stroke-width: 0.5px;
+    vector-effect: non-scaling-stroke;
+}
+
+.fao-area {
+    fill: transparent;
+    stroke: #8ecae6;
+    stroke-width: 1px;
+    stroke-opacity: 0.6;
+    fill-opacity: 0.2; 
+    transition: all 0.3s ease;
+    cursor: pointer;
+    vector-effect: non-scaling-stroke;
+}
+
+.fao-area:hover {
+    fill: #00e5ff;
+    fill-opacity: 0.3;
+    stroke: #00e5ff;
+    stroke-width: 2px;
+    stroke-opacity: 1;
+    filter: drop-shadow(0 0 8px rgba(0, 229, 255, 0.8));
+}
+
+.fao-area.active {
+    fill: #00e5ff;
+    fill-opacity: 0.5;
+    stroke: #ffffff;
+    stroke-width: 2px;
+}
+
+.sidebar {
+    position: fixed;
+    right: -500px;
+    top: 100px;
+    width: 400px;
+    height: calc(100vh - 100px);
+    background: rgba(2, 16, 25, 0.95);
+    border-left: 1px solid #00e5ff;
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+    color: white;
+}
+
+.sidebar.open { right: 0; }
+.close-btn { 
+    color: white; 
+    background: none; 
+    border: none; 
+    font-size: 24px; 
+    cursor: pointer; 
+    position: absolute; 
+    top: 10px; 
+    right: 10px;
+}
+#areaTitle { color: #00e5ff; border-bottom: 1px solid #00e5ff; padding-bottom: 10px;}
+
+.tooltip {
+    position: absolute;
+    background: rgba(2, 16, 25, 0.9);
+    border: 1px solid #00e5ff;
+    color: white;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+#mapLoader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(2, 16, 25, 0.7); 
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s;
+}
+
+#mapLoader.hidden {
+    opacity: 0;
+    pointer-events: none; 
+    z-index: -1;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    /* Light blue base */
+    border: 5px solid rgba(0, 229, 255, 0.3); 
+    /* Bright cyan top */
+    border-top: 5px solid #00e5ff; 
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

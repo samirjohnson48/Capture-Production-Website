@@ -1,0 +1,195 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 40px;
+  background-image: url('../images/ocean_background.jpg');
+  background-size: cover;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  background-image: url('../images/fish_background.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding: 80px 20px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 3em;
+  margin-top: -40px;
+  margin-left: -40px;
+  margin-right: -40px;
+}
+
+/* Navigation bar */
+.nav-bar {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  padding: 12px 24px;
+  background-color: #0099ff;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 2px solid #0099ff;
+}
+
+.nav-link:hover {
+  background-color: #0078cc;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 153, 255, 0.3);
+}
+
+.nav-link.active {
+  background-color: #0078cc;
+  box-shadow: 0 4px 12px rgba(0, 153, 255, 0.4);
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: flex-start;
+  margin-bottom: 40px;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.control-group label {
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 16;
+  text-align: center;
+}
+
+.year-range-group {
+  flex: 0 1 300px;
+}
+
+.filter-group {
+  flex: 0 1 200px;
+}
+
+label {
+  display: block;
+  margin-bottom: 0;
+}
+
+#year-range-slider {
+  width: 50%;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin: 0 auto;
+}
+
+#year-range-slider.noUi-target {
+  background: #e0e0e0;
+  border-radius: 3px;
+  height: 4px;
+  border: none;
+  box-shadow: none;
+}
+
+#year-range-slider .noUi-connect {
+  background: #0099ff;
+}
+
+#year-range-slider .noUi-handle {
+  height: 14px;
+  width: 14px;
+  top: -5px;
+  border-radius: 50%;
+  background: #0099ff;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#year-range-slider .noUi-handle:hover {
+  background: #2472a4;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+#year-range-slider .noUi-handle:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+#year-range-slider .noUi-tooltip {
+  font-size: 10px;
+  bottom: 8px;
+  border: none;
+  background: none;
+}
+
+#year-range-slider .noUi-origin {
+  cursor: pointer;
+}
+
+select {
+  padding: 8px 12px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  background-color: #ffffff;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+select:hover {
+  border-color: #0099ff;
+}
+
+select:focus {
+  outline: none;
+  border-color: #0099ff;
+  box-shadow: 0 0 0 3px rgba(0, 153, 255, 0.2);
+}
+
+#applyBtn {
+  padding: 10px 24px;
+  background-color: #0099ff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 1000;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  align-self: flex-end;
+  margin-top: 24px;
+}
+
+#applyBtn:hover {
+  background-color: #0080cc;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+#applyBtn:active {
+  background-color: #006699;
+}
+
+.chart-container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 40px auto;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
