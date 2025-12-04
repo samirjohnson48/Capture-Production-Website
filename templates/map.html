@@ -15,18 +15,21 @@
             <div id="projectionBtn" class="dropdown-button" data-value="">Projection</div>
 
             <div id="projectionMenu" class="dropdown-content">
-                <div class="dropdown-item" data-value="mercator">Mercator</div>
-                <div class="dropdown-item" data-value="orthographic">Orthographic</div>
-                <div class="dropdown-item" data-value="natural">Natural</div>
+                <div id="mercatorBtn" class="dropdown-item" data-value="mercator">Mercator</div>
+                <div id="orthographicBtn" class="dropdown-item" data-value="orthographic">Orthographic</div>
+                <div id="naturalBtn" class="dropdown-item" data-value="natural">Natural</div>
             </div>
         </div>
 
-        <input type="range" id="yearSlider" min="1950" max="2023" value="2023" step="1">
+        <div id="yearContainer" class="sliderContainer" >
+            <label id="yearLabel" class="sliderLabel">Year</label>
+            <input type="range" class="slider" id="yearSlider" min="1950" max="2023" value="2023" step="1">
+        </div>
     </div>
 
     <div id="map-container">
         <svg id="map"></svg>
-        <div id="mapLoader" class="hidden">
+        <div id="mapLoader">
             <div class="spinner"></div>
         </div>
         <div id="sidebar" class="sidebar">
